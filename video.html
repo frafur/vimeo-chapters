@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+<body>
+<iframe id="myvideo"  src="//player.vimeo.com/video/32001208" width="400" height="170" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+       <ul class="chapterLinks">
+            <li><a href="#" class="seek"  name="0">skip to 0.00 </a></li>
+            <li><a href="#" class="seek"  name="45">skip to 0.45 </a></li>
+            <li><a href="#" class="seek"  name="121">skip to 2.01 </a></li>
+            <li><a href="#" class="seek"  name="186">skip to 3.06 </a></li>
+            <li><a href="#" class="seek"  name="252">skip to 4.12 </a></li> 
+       </ul>
+            
+<script type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<script>
+ jQuery(".seek").each(function() {
+    console.log( "ready!" );
+    var player_1 = $f(jQuery('#myvideo')[0]);
+    $(this).click(function() {
+         player_1.api('play');
+         player_1.api('seekTo', $(this).attr("name"));
+         return false;
+    })
+ });
+</script>
+</body>
+</html>
