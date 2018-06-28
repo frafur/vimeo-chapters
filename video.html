@@ -16,15 +16,17 @@
             
 <script type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <script>
+jQuery( document ).ready(function() {
+ console.log( "ready!" );
+ var player_1 = $f(jQuery('#myvideo')[0]);
  jQuery(".seek").each(function() {
-    console.log( "ready!" );
-    var player_1 = $f(jQuery('#myvideo')[0]);
     $(this).click(function() {
          player_1.api('play');
          player_1.api('seekTo', $(this).attr("name"));
          return false;
     })
  });
+});
 </script>
 </body>
 </html>
